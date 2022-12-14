@@ -34,9 +34,72 @@
           </div>
           <div class="block-right">
             <h1 class="block-right__header">Пижама для девочек</h1>
+            <p class="block-right__art">Арт. 02765/46</p>
+            <div class="rating">
+              <p class="rating_text">Отзывы</p>
+              <div class="rating_stars">
+                <img src="img/star_black.svg" alt="stars" />
+                <img src="img/star_black.svg" alt="stars" />
+                <img src="img/star_black.svg" alt="stars" />
+                <img src="img/star_black.svg" alt="stars" />
+                <img src="img/star_white.svg" alt="stars" />
+              </div>
+              <p class="rating_text">14 отзывов</p>
+              <a class="rating_arrow arrow" href="#"
+                ><img src="img/line.svg" alt="arrow"
+              /></a>
+            </div>
+            <div class="price">
+              <p class="price_new">800 ₽</p>
+              <p class="price_old">1 500 ₽</p>
+              <a class="price_arrow arrow" href="#"
+                ><img src="img/line.svg" alt="arrow"
+              /></a>
+            </div>
+            <div class="discount">
+              <p class="discount_text">скидка -36%</p>
+              <p class="discount_text">акция -20%</p>
+            </div>
+            <div class="size">
+              <select class="size_select">
+                <option value="">Выбрать размер</option>
+                <option value="">L</option>
+                <option value="">S</option>
+                <option value="">M</option>
+                <option value="">XL</option>
+                <option value="">XXL</option>
+              </select>
+            </div>
+            <div class="cart">
+              <div class="cart_number">
+                <div class="box operators" @click="number++">+</div>
+                <div class="box">{{ number }}</div>
+                <div class="box operators" @click="minus">-</div>
+              </div>
+              <button class="cart_add">Добавить в корзину</button>
+            </div>
           </div>
         </div>
       </section>
     </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            number: 1,
+          };
+        },
+        methods: {
+          minus() {
+            if (this.number <= 1) {
+              this.number++;
+            }
+            this.number--;
+          },
+        },
+      }).mount(".main");
+    </script>
   </body>
 </html>
